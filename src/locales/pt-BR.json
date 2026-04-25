@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "links": {
+      "features": "Recursos",
+      "performance": "Performance",
+      "workflow": "Workflow",
+      "docs": "Docs"
+    },
+    "download": "Download",
+    "themeLight": "Mudar para tema claro",
+    "themeDark": "Mudar para tema escuro",
+    "language": "Idioma"
+  },
+  "hero": {
+    "badge": "Adila 1.0 — agora em beta público",
+    "title1": "O editor de código",
+    "title2": "forjado para fullstack.",
+    "subtitle": "Performance nativa, latência mínima e DX impecável. Construído em Go para devs que escrevem stack inteira — do banco ao pixel.",
+    "ctaDownload": "Baixar Adila",
+    "ctaGithub": "Ver no GitHub",
+    "platforms": "macOS · Linux · Windows · ARM e x86_64"
+  },
+  "highlights": {
+    "0": {
+      "kicker": "PERFORMANCE",
+      "title": "Cold start em 142ms",
+      "text": "Núcleo escrito em Go. Render nativo, indexação incremental e zero overhead de Electron — abre projetos enormes sem travar.",
+      "metric": "142ms",
+      "sub": "abertura de projeto"
+    },
+    "1": {
+      "kicker": "DEVELOPER EXPERIENCE",
+      "title": "Atalhos forjados para fluxo",
+      "text": "Command Center, multi-cursor inteligente e Go-to-Definition cross-stack — TypeScript, Go, Rust ou SQL na mesma sessão.",
+      "metric": "<8ms",
+      "sub": "latência de teclado"
+    },
+    "2": {
+      "kicker": "FULLSTACK",
+      "title": "Frontend e backend, lado a lado",
+      "text": "LSPs prontos, terminal integrado, git/GitHub e file watcher — uma stack inteira sem instalar 12 extensões na primeira semana.",
+      "metric": "1 binário",
+      "sub": "zero setup"
+    }
+  },
+  "features": {
+    "kicker": "Workflow",
+    "title1": "Tudo no mesmo binário.",
+    "title2": "Zero ginástica de extensões.",
+    "subtitle": "LSP, terminal, git e busca já vêm afinados. Você abre o projeto e começa — sem caçar plugins, sem configurar três caminhos diferentes para o mesmo formatter.",
+    "row1": {
+      "kicker": "LSP NATIVO",
+      "title1": "Autocomplete preciso",
+      "title2": "em qualquer linguagem.",
+      "text": "LSPs gerenciados pela Adila, com hot-reload em mudanças de schema. TypeScript, Go, Rust, Python e SQL conversam entre si — Go-to-Definition atravessa o stack.",
+      "cta": "Ver linguagens suportadas"
+    },
+    "row2": {
+      "kicker": "TERMINAL & GIT",
+      "title1": "Terminal integrado,",
+      "title2": "git que não atrapalha.",
+      "text": "Múltiplas sessões de shell com integração de prompt, status do git inline e commits assinados sem sair do editor. Push, PR e review em três teclas.",
+      "cta": "Conhecer o command center"
+    }
+  },
+  "powerFeatures": {
+    "kicker": "Quatro pilares",
+    "title1": "Construído sobre o que devs",
+    "title2": "usam todo dia.",
+    "subtitle": "Cada recurso da Adila resolve uma dor concreta de quem mantém uma stack inteira em produção.",
+    "items": {
+      "0": {
+        "title": "Command Center",
+        "text": "Um único atalho para arquivos, símbolos, comandos e histórico de git. Fuzzy ranking treinado com seu uso."
+      },
+      "1": {
+        "title": "LSP gerenciado",
+        "text": "Servidores instalados sob demanda. Atualizações em background, sem você abrir um terminal."
+      },
+      "2": {
+        "title": "Git e GitHub",
+        "text": "Diff inline, blame, PRs e reviews integrados. Stash e cherry-pick guiados, com histórico legível."
+      },
+      "3": {
+        "title": "Multi-shell terminal",
+        "text": "bash, zsh, fish ou pwsh com integração de prompt e split panes nativo. Latência de teclado abaixo de 8ms."
+      }
+    }
+  },
+  "performance": {
+    "kicker": "Números",
+    "title": "Velocidade não é detalhe.",
+    "subtitle": "Adila foi medida e re-medida em cada release. Estes são números reais — não estimativas de marketing.",
+    "stats": {
+      "0": { "label": "Cold start", "note": "projeto de 12k arquivos" },
+      "1": { "label": "Latência de teclado", "note": "p99, 120Hz" },
+      "2": { "label": "RAM em idle", "note": "vs. ~600MB do Electron" },
+      "3": { "label": "Binário", "note": "single-file, sem runtime" }
+    }
+  },
+  "cta": {
+    "title1": "Pronto para sentir",
+    "title2": "a diferença?",
+    "subtitle": "Beta público. Gratuito enquanto durar. Suas configs viajam com sua conta.",
+    "heading": "Baixe a Adila",
+    "text": "Um único binário. Detecção automática da sua plataforma na próxima tela.",
+    "download": "↓ baixar",
+    "or": "ou",
+    "platforms": {
+      "macos": "Apple Silicon · Intel",
+      "linux": "x86_64 · ARM64",
+      "windows": "x64"
+    }
+  },
+  "footer": {
+    "tagline": "Adila é um editor de código nativo construído em Go. Performance, DX e fullstack — sem concessões.",
+    "cols": {
+      "product": "Produto",
+      "resources": "Recursos",
+      "company": "Adila"
+    },
+    "items": {
+      "product": ["Recursos", "Performance", "Changelog", "Roadmap"],
+      "resources": ["Docs", "CLI", "GitHub", "Discord"],
+      "company": ["Sobre", "Privacidade", "Licença", "Contato"]
+    },
+    "copyright": "© {{year}} Adila. Todos os direitos reservados.",
+    "build": "v1.0.0-beta · construído com Go + Wails"
+  }
+}
