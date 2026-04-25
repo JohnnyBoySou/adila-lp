@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 const RELEASES_URL = "https://raw.githubusercontent.com/JohnnyBoySou/adila-ide/master/RELEASES.md";
@@ -145,6 +145,7 @@ export function Releases() {
   const { t, i18n } = useTranslation();
   const [md, setMd] = useState<string | null>(null);
   const [error, setError] = useState(false);
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     let cancelled = false;
@@ -239,47 +240,107 @@ export function Releases() {
                 </time>
               </header>
 
-              <div className="space-y-5 px-7 py-6">
-                {r.blocks.map((b, idx) => {
-                  if (b.kind === "p") {
-                    return (
-                      <p key={idx} className="text-[14px] leading-relaxed text-ink-muted">
-                        {renderInline(b.text)}
-                      </p>
-                    );
-                  }
-                  if (b.kind === "h3") {
-                    return (
-                      <h4
-                        key={idx}
-                        className="pt-1 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-dim"
-                      >
-                        {b.text}
-                      </h4>
-                    );
-                  }
-                  return (
-                    <ul key={idx} className="space-y-2">
-                      {b.items.map((item, j) => (
-                        <li
-                          key={j}
-                          className="flex gap-3 text-[14px] leading-relaxed text-ink-muted"
-                        >
-                          <span
-                            aria-hidden
-                            className="mt-2 h-1 w-1 shrink-0 rounded-full bg-ink-dim"
-                          />
-                          <span>{renderInline(item)}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  );
-                })}
-              </div>
+              <ReleaseBody
+                blocks={r.blocks}
+                expanded={Boolean(expanded[r.version])}
+                onToggle={() => setExpanded((e) => ({ ...e, [r.version]: !e[r.version] }))}
+                expandLabel={t("releases.expand")}
+                collapseLabel={t("releases.collapse")}
+              />
             </motion.article>
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+type ReleaseBodyProps = {
+  blocks: Block[];
+  expanded: boolean;
+  onToggle: () => void;
+  expandLabel: string;
+  collapseLabel: string;
+};
+
+function ReleaseBody({ blocks, expanded, onToggle, expandLabel, collapseLabel }: ReleaseBodyProps) {
+  return (
+    <div>
+      <motion.div
+        animate={{ height: expanded ? "auto" : 220 }}
+        initial={false}
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] as const }}
+        className="relative overflow-hidden"
+      >
+        <div className="space-y-5 px-7 py-6">
+          {blocks.map((b, idx) => {
+            if (b.kind === "p") {
+              return (
+                <p key={idx} className="text-[14px] leading-relaxed text-ink-muted">
+                  {renderInline(b.text)}
+                </p>
+              );
+            }
+            if (b.kind === "h3") {
+              return (
+                <h4
+                  key={idx}
+                  className="pt-1 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-dim"
+                >
+                  {b.text}
+                </h4>
+              );
+            }
+            return (
+              <ul key={idx} className="space-y-2">
+                {b.items.map((item, j) => (
+                  <li key={j} className="flex gap-3 text-[14px] leading-relaxed text-ink-muted">
+                    <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-ink-dim" />
+                    <span>{renderInline(item)}</span>
+                  </li>
+                ))}
+              </ul>
+            );
+          })}
+        </div>
+        <AnimatePresence>
+          {!expanded && (
+            <motion.div
+              key="fade"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-bg-card via-bg-card/80 to-transparent"
+            />
+          )}
+        </AnimatePresence>
+      </motion.div>
+      <div className="flex justify-center border-t border-line-soft px-7 py-3">
+        <button
+          type="button"
+          onClick={onToggle}
+          aria-expanded={expanded}
+          className="inline-flex items-center gap-2 rounded-md px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted transition-colors hover:text-ink"
+        >
+          {expanded ? collapseLabel : expandLabel}
+          <motion.span
+            aria-hidden
+            animate={{ rotate: expanded ? 180 : 0 }}
+            transition={{ duration: 0.2 }}
+            className="inline-grid"
+          >
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <path
+                d="M2 4l3 3 3-3"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </motion.span>
+        </button>
+      </div>
+    </div>
   );
 }

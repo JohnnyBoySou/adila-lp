@@ -147,10 +147,12 @@ export function EditorMockup({
         </span>
       </div>
       <div
-        className={`grid ${compact ? "grid-cols-[140px_1fr]" : "grid-cols-[180px_1fr]"}`}
-        style={{ minHeight: compact ? 220 : 360 }}
+        className={`grid grid-cols-1 ${
+          compact ? "sm:grid-cols-[140px_1fr]" : "sm:grid-cols-[180px_1fr]"
+        }`}
+        style={{ minHeight: compact ? 220 : 320 }}
       >
-        <aside className="border-r border-line-soft bg-bg-card px-2 py-3 font-mono text-[11px] text-ink-muted">
+        <aside className="hidden border-r border-line-soft bg-bg-card px-2 py-3 font-mono text-[11px] text-ink-muted sm:block">
           <div className="mb-2 px-2 text-[10px] uppercase tracking-[0.16em] text-ink-dim">
             Explorer
           </div>
@@ -184,7 +186,7 @@ export function EditorMockup({
               </span>
             ))}
           </div>
-          <pre className="flex-1 overflow-hidden p-3 font-mono text-[11px] leading-[1.7] text-ink code-syntax">
+          <pre className="flex-1 overflow-x-auto p-3 font-mono text-[11px] leading-[1.7] text-ink code-syntax">
             {code.map((line, idx) => (
               <motion.div
                 key={line.num}

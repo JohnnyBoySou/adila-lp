@@ -9,7 +9,9 @@
     "download": "Download",
     "themeLight": "Switch to light theme",
     "themeDark": "Switch to dark theme",
-    "language": "Language"
+    "language": "Language",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
   },
   "hero": {
     "badge": "Adila 1.0 — now in public beta",
@@ -103,7 +105,9 @@
     "title": "Release notes.",
     "subtitle": "Everything that landed in each Adila release — straight from the RELEASES.md in the repo.",
     "current": "Current",
-    "error": "Couldn't load the notes. See"
+    "error": "Couldn't load the notes. See",
+    "expand": "Read full",
+    "collapse": "Collapse"
   },
   "cta": {
     "title1": "Ready to feel",

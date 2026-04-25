@@ -9,7 +9,9 @@
     "download": "Download",
     "themeLight": "Mudar para tema claro",
     "themeDark": "Mudar para tema escuro",
-    "language": "Idioma"
+    "language": "Idioma",
+    "menuOpen": "Abrir menu",
+    "menuClose": "Fechar menu"
   },
   "hero": {
     "badge": "Adila 1.0 — agora em beta público",
@@ -103,7 +105,9 @@
     "title": "Release notes.",
     "subtitle": "Tudo que entrou em cada versão da Adila — direto do RELEASES.md no repositório.",
     "current": "Atual",
-    "error": "Não foi possível carregar as notas. Veja em"
+    "error": "Não foi possível carregar as notas. Veja em",
+    "expand": "Ver completo",
+    "collapse": "Recolher"
   },
   "cta": {
     "title1": "Pronto para sentir",
