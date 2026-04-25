@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { LogoMark } from "./Logo.tsx";
 
 const platforms = [
-  { os: "macOS", arch: "Apple Silicon · Intel", icon: "" },
-  { os: "Linux", arch: "x86_64 · ARM64", icon: "" },
-  { os: "Windows", arch: "x64", icon: "" },
-];
+  { os: "macOS", key: "macos" },
+  { os: "Linux", key: "linux" },
+  { os: "Windows", key: "windows" },
+] as const;
 
 export function CtaWaitlist() {
+  const { t } = useTranslation();
   return (
     <section className="container-x py-24 text-center" id="download">
       <motion.div
@@ -17,12 +19,10 @@ export function CtaWaitlist() {
         transition={{ duration: 0.7 }}
       >
         <h2 className="font-display text-[clamp(30px,4.5vw,52px)] font-medium leading-tight tracking-tight">
-          Pronto para sentir
-          <br /> a diferença?
+          {t("cta.title1")}
+          <br /> {t("cta.title2")}
         </h2>
-        <p className="mx-auto mt-4 max-w-md text-[15px] text-ink-muted">
-          Beta público. Gratuito enquanto durar. Suas configs viajam com sua conta.
-        </p>
+        <p className="mx-auto mt-4 max-w-md text-[15px] text-ink-muted">{t("cta.subtitle")}</p>
       </motion.div>
 
       <motion.div
@@ -45,11 +45,9 @@ export function CtaWaitlist() {
         <div className="relative z-10 flex flex-col items-center">
           <LogoMark size="lg" />
           <h3 className="mt-5 font-display text-[22px] font-medium tracking-tight">
-            Baixe a Adila
+            {t("cta.heading")}
           </h3>
-          <p className="mt-1 max-w-sm text-[13px] text-ink-muted">
-            Um único binário. Detecção automática da sua plataforma na próxima tela.
-          </p>
+          <p className="mt-1 max-w-sm text-[13px] text-ink-muted">{t("cta.text")}</p>
 
           <div className="mt-7 grid w-full max-w-md gap-2">
             {platforms.map((p, i) => (
@@ -65,15 +63,17 @@ export function CtaWaitlist() {
               >
                 <div>
                   <div className="text-[13px] font-medium text-ink">{p.os}</div>
-                  <div className="font-mono text-[11px] text-ink-dim">{p.arch}</div>
+                  <div className="font-mono text-[11px] text-ink-dim">
+                    {t(`cta.platforms.${p.key}`)}
+                  </div>
                 </div>
-                <span className="font-mono text-[11px] text-ink-muted">↓ baixar</span>
+                <span className="font-mono text-[11px] text-ink-muted">{t("cta.download")}</span>
               </motion.a>
             ))}
           </div>
 
           <div className="mt-6 flex items-center gap-3 font-mono text-[11px] text-ink-dim">
-            <span>ou</span>
+            <span>{t("cta.or")}</span>
             <code className="rounded border border-line-soft bg-bg-elev px-2 py-1 text-ink">
               brew install adila
             </code>

@@ -98,6 +98,13 @@
       "3": { "label": "Binário", "note": "single-file, sem runtime" }
     }
   },
+  "releases": {
+    "kicker": "Histórico",
+    "title": "Release notes.",
+    "subtitle": "Tudo que entrou em cada versão da Adila — direto do RELEASES.md no repositório.",
+    "current": "Atual",
+    "error": "Não foi possível carregar as notas. Veja em"
+  },
   "cta": {
     "title1": "Pronto para sentir",
     "title2": "a diferença?",
@@ -120,7 +127,7 @@
       "company": "Adila"
     },
     "items": {
-      "product": ["Recursos", "Performance", "Changelog", "Roadmap"],
+      "product": ["Recursos", "Performance", "Release notes", "Roadmap"],
       "resources": ["Docs", "CLI", "GitHub", "Discord"],
       "company": ["Sobre", "Privacidade", "Licença", "Contato"]
     },

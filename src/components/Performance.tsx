@@ -1,15 +1,17 @@
 import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { gsap } from "gsap";
+import { useTranslation } from "react-i18next";
 
-const stats = [
-  { label: "Cold start", value: 142, unit: "ms", note: "projeto de 12k arquivos" },
-  { label: "Latência de teclado", value: 7.4, unit: "ms", note: "p99, 120Hz", decimals: 1 },
-  { label: "RAM em idle", value: 96, unit: "MB", note: "vs. ~600MB do Electron" },
-  { label: "Binário", value: 38, unit: "MB", note: "single-file, sem runtime" },
+const stats: { idx: number; value: number; unit: string; decimals?: number }[] = [
+  { idx: 0, value: 142, unit: "ms" },
+  { idx: 1, value: 7.4, unit: "ms", decimals: 1 },
+  { idx: 2, value: 96, unit: "MB" },
+  { idx: 3, value: 38, unit: "MB" },
 ];
 
 export function Performance() {
+  const { t } = useTranslation();
   return (
     <section className="container-x py-24" id="performance">
       <motion.div
@@ -20,20 +22,27 @@ export function Performance() {
         className="mx-auto mb-14 max-w-2xl text-center"
       >
         <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-dim">
-          Números
+          {t("performance.kicker")}
         </span>
         <h2 className="mt-3 font-display text-[clamp(28px,4vw,48px)] font-medium leading-tight tracking-tight">
-          Velocidade não é detalhe.
+          {t("performance.title")}
         </h2>
         <p className="mx-auto mt-4 max-w-md text-[15px] text-ink-muted">
-          Adila foi medida e re-medida em cada release. Estes são números reais — não estimativas de
-          marketing.
+          {t("performance.subtitle")}
         </p>
       </motion.div>
 
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         {stats.map((s, i) => (
-          <StatCard key={s.label} {...s} index={i} />
+          <StatCard
+            key={s.idx}
+            label={t(`performance.stats.${s.idx}.label`)}
+            note={t(`performance.stats.${s.idx}.note`)}
+            value={s.value}
+            unit={s.unit}
+            decimals={s.decimals ?? 0}
+            index={i}
+          />
         ))}
       </div>
     </section>
@@ -45,11 +54,11 @@ type StatProps = {
   value: number;
   unit: string;
   note: string;
-  decimals?: number;
+  decimals: number;
   index: number;
 };
 
-function StatCard({ label, value, unit, note, decimals = 0, index }: StatProps) {
+function StatCard({ label, value, unit, note, decimals, index }: StatProps) {
   const ref = useRef<HTMLDivElement | null>(null);
   const numRef = useRef<HTMLSpanElement | null>(null);
   const inView = useInView(ref, { once: true, amount: 0.4 });

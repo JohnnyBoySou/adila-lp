@@ -1,27 +1,27 @@
+import { useTranslation } from "react-i18next";
 import { Logo } from "./Logo.tsx";
 
-const product = ["Recursos", "Performance", "Changelog", "Roadmap"];
-const resources = ["Docs", "CLI", "GitHub", "Discord"];
-const company = ["Sobre", "Privacidade", "Licença", "Contato"];
+const cols = ["product", "resources", "company"] as const;
 
 export function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="border-t border-line-soft py-14">
       <div className="container-x grid gap-8 md:grid-cols-[2fr_1fr_1fr_1fr]">
         <div>
           <Logo />
           <p className="mt-4 max-w-xs text-[13px] leading-relaxed text-ink-muted">
-            Adila é um editor de código nativo construído em Go. Performance, DX e fullstack — sem
-            concessões.
+            {t("footer.tagline")}
           </p>
         </div>
-        <Col title="Produto" items={product} />
-        <Col title="Recursos" items={resources} />
-        <Col title="Adila" items={company} />
+        {cols.map((c) => {
+          const items = t(`footer.items.${c}`, { returnObjects: true }) as string[];
+          return <Col key={c} title={t(`footer.cols.${c}`)} items={items} />;
+        })}
       </div>
       <div className="container-x mt-12 flex flex-col items-center justify-between gap-2 border-t border-line-soft pt-5 font-mono text-[11px] text-ink-dim md:flex-row">
-        <span>© {new Date().getFullYear()} Adila. Todos os direitos reservados.</span>
-        <span>v1.0.0-beta · construído com Go + Wails</span>
+        <span>{t("footer.copyright", { year: new Date().getFullYear() })}</span>
+        <span>{t("footer.build")}</span>
       </div>
     </footer>
   );
