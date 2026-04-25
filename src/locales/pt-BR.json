@@ -119,6 +119,165 @@
       "windows": "x64"
     }
   },
+  "pages": {
+    "roadmap": {
+      "kicker": "Roadmap",
+      "title": "O que vem por aí.",
+      "subtitle": "Planejamento público da Adila — atualizado a cada release.",
+      "columns": {
+        "now": {
+          "label": "Agora",
+          "title": "Em desenvolvimento",
+          "items": {
+            "0": "Snippets cross-language com placeholders nomeados",
+            "1": "Refactor: rename simbólico cross-file via LSP",
+            "2": "GitHub Actions log streaming na sidebar",
+            "3": "Improvements no Command Center: previews inline"
+          }
+        },
+        "next": {
+          "label": "Em seguida",
+          "title": "Próximo trimestre",
+          "items": {
+            "0": "Debug adapter integrado (Go, Node, Rust)",
+            "1": "Notebook mode para Markdown + código executável",
+            "2": "Telas de testes com runner agnóstico (vitest, go test, cargo test)",
+            "3": "Profiles de workspace por monorepo"
+          }
+        },
+        "later": {
+          "label": "Depois",
+          "title": "Em estudo",
+          "items": {
+            "0": "Live share / pair programming P2P",
+            "1": "AI inline, opt-in, modelo configurável",
+            "2": "Extensões em WebAssembly (sandbox seguro)",
+            "3": "Mobile companion para review de PR"
+          }
+        }
+      }
+    },
+    "docs": {
+      "kicker": "Documentação",
+      "title": "Aprenda a Adila em uma tarde.",
+      "subtitle": "Guia oficial: instalação, configuração, atalhos e tudo que você precisa para começar.",
+      "cta": "Ler",
+      "cards": {
+        "start": {
+          "title": "Começando",
+          "text": "Instalação, primeiro projeto e tour pela interface. Cinco minutos do zero ao primeiro commit."
+        },
+        "config": {
+          "title": "Configuração",
+          "text": "Settings em JSON, profiles por workspace e como sincronizar entre máquinas."
+        },
+        "lsp": {
+          "title": "LSPs",
+          "text": "Como ativar Go, Rust, TypeScript, Python e SQL. Servidores customizados também."
+        },
+        "keys": {
+          "title": "Atalhos",
+          "text": "Referência completa das keybindings, com presets para vim, emacs e VS Code."
+        },
+        "themes": {
+          "title": "Temas",
+          "text": "Dark, light e high-contrast. Como criar e compartilhar o seu."
+        },
+        "git": {
+          "title": "Git e GitHub",
+          "text": "Diff, blame, branch flows, PRs assinados e o que está integrado out of the box."
+        }
+      }
+    },
+    "cli": {
+      "kicker": "CLI",
+      "title": "adila, o comando.",
+      "subtitle": "Use a Adila do terminal: abrir projetos, rodar diff e gerenciar a instalação.",
+      "commands": {
+        "open": "Abre a pasta atual em uma nova janela da Adila.",
+        "diff": "Compara dois arquivos lado a lado dentro da Adila.",
+        "merge": "Resolução visual de conflito de três vias.",
+        "install": "Adiciona o binário `adila` ao seu PATH.",
+        "uninstall": "Remove o binário `adila` do PATH.",
+        "version": "Mostra a versão instalada e a build hash."
+      }
+    },
+    "about": {
+      "kicker": "Sobre",
+      "title": "Feita por quem usa.",
+      "subtitle": "A Adila nasceu de uma frustração simples: editores que não respeitam a velocidade do dev fullstack.",
+      "stack": "Stack",
+      "contact": "Falar com a gente",
+      "mission": {
+        "title": "Missão",
+        "text": "Construir o editor mais rápido para quem mantém frontend, backend e infraestrutura no mesmo dia."
+      },
+      "body": {
+        "0": "A Adila é um projeto independente, sem capital de risco e sem agenda escondida. O core é open-source no GitHub e a roadmap é pública.",
+        "1": "Acreditamos que ferramentas de programação devem ser previsíveis: keybindings que não mudam de release em release, latência baixa em qualquer máquina, configuração legível.",
+        "2": "Tudo que aparece na landing está em beta público — feedback e issues são especialmente bem-vindos nesta fase."
+      }
+    },
+    "privacy": {
+      "kicker": "Privacidade",
+      "title": "O que coletamos. E o que não coletamos.",
+      "subtitle": "Política curta e direta. Se algo aqui mudar, mudamos a data e avisamos.",
+      "updated": "Última atualização: 25 de abril de 2026",
+      "sections": {
+        "collect": {
+          "title": "O que coletamos",
+          "text": "Telemetria opcional de crash e performance, sempre desativada por padrão. Quando ativada, enviamos somente versão da Adila, sistema operacional e stack trace anonimizado. Nenhum conteúdo de arquivo é coletado."
+        },
+        "store": {
+          "title": "Onde armazenamos",
+          "text": "Configurações ficam em disco no diretório de dados do sistema. Nada sai da sua máquina sem ação explícita sua, como sincronização opcional de configs com sua conta."
+        },
+        "share": {
+          "title": "Compartilhamento",
+          "text": "Não vendemos, alugamos nem trocamos dados com terceiros. Provedores de infraestrutura processam dados estritamente para entregar o serviço (sync, atualizações, telemetria)."
+        },
+        "rights": {
+          "title": "Seus direitos",
+          "text": "Você pode exportar, corrigir ou deletar suas informações a qualquer momento via Configurações ou diretamente conosco. Lei aplicável: LGPD (Brasil) e GDPR (UE) onde se aplica."
+        },
+        "contact": {
+          "title": "Contato",
+          "text": "Dúvidas, pedidos de exclusão ou auditoria: privacy@adila.dev. Respondemos em até 7 dias."
+        }
+      }
+    },
+    "license": {
+      "kicker": "Licença",
+      "title": "Open-source, MIT.",
+      "subtitle": "O core da Adila é livre para usar, modificar e redistribuir.",
+      "label": "Resumo",
+      "full": "Texto completo no repositório:",
+      "body": "Copyright (c) 2026 Adila contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT."
+    },
+    "contact": {
+      "kicker": "Contato",
+      "title": "Fale com a gente.",
+      "subtitle": "Bug, sugestão, parceria ou só uma boa conversa sobre editores.",
+      "channels": {
+        "email": {
+          "title": "E-mail",
+          "text": "Resposta em até dois dias úteis."
+        },
+        "github": {
+          "title": "GitHub",
+          "text": "Issues, discussions e contribuições."
+        },
+        "discord": {
+          "title": "Discord",
+          "text": "Comunidade ativa, suporte rápido e canal #beta."
+        },
+        "x": {
+          "title": "X / Twitter",
+          "text": "Anúncios de release e updates curtos."
+        }
+      }
+    }
+  },
   "footer": {
     "tagline": "Adila é um editor de código nativo construído em Go. Performance, DX e fullstack — sem concessões.",
     "cols": {
@@ -126,10 +285,25 @@
       "resources": "Recursos",
       "company": "Adila"
     },
-    "items": {
-      "product": ["Recursos", "Performance", "Release notes", "Roadmap"],
-      "resources": ["Docs", "CLI", "GitHub", "Discord"],
-      "company": ["Sobre", "Privacidade", "Licença", "Contato"]
+    "links": {
+      "product": {
+        "features": "Recursos",
+        "performance": "Performance",
+        "releases": "Release notes",
+        "roadmap": "Roadmap"
+      },
+      "resources": {
+        "docs": "Docs",
+        "cli": "CLI",
+        "github": "GitHub",
+        "discord": "Discord"
+      },
+      "company": {
+        "about": "Sobre",
+        "privacy": "Privacidade",
+        "license": "Licença",
+        "contact": "Contato"
+      }
     },
     "copyright": "© {{year}} Adila. Todos os direitos reservados.",
     "build": "v1.0.0-beta · construído com Go + Wails"

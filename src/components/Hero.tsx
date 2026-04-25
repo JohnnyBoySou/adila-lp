@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { useTranslation } from "react-i18next";
 import { EditorMockup } from "./EditorMockup.tsx";
+import { useGithubStars, formatStars } from "../hooks/useGithubStars.ts";
 
 export function Hero() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const stars = useGithubStars("JohnnyBoySou/adila-ide");
   const stageRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -112,9 +114,15 @@ export function Hero() {
             href="https://github.com/JohnnyBoySou/adila-ide"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-line bg-bg-card-2 px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-bg-card"
+            className="group inline-flex items-center gap-2 rounded-lg border border-line bg-bg-card-2 px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-bg-card"
           >
             <GhIcon /> {t("hero.ctaGithub")}
+            {stars !== null && (
+              <span className="ml-1 inline-flex items-center gap-1 border-l border-line-soft pl-3 font-mono text-[12px] text-ink-muted transition-colors group-hover:text-ink">
+                <StarIcon />
+                {formatStars(stars, i18n.language)}
+              </span>
+            )}
           </a>
         </motion.div>
 
@@ -146,6 +154,14 @@ function DownloadIcon() {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+    </svg>
+  );
+}
+
+function StarIcon() {
+  return (
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M12 2.5l2.92 5.92 6.53.95-4.72 4.6 1.11 6.5L12 17.4l-5.84 3.07 1.11-6.5L2.55 9.37l6.53-.95L12 2.5z" />
     </svg>
   );
 }

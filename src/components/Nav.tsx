@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Logo } from "./Logo.tsx";
 import { ThemeToggle } from "./ThemeToggle.tsx";
 import { LanguageSelect } from "./LanguageSelect.tsx";
 
 const links = [
-  { key: "features", href: "#features" },
-  { key: "performance", href: "#performance" },
-  { key: "workflow", href: "#workflow" },
-  { key: "docs", href: "#docs" },
+  { key: "features", to: "/#features" },
+  { key: "performance", to: "/#performance" },
+  { key: "workflow", to: "/#workflow" },
+  { key: "docs", to: "/docs" },
 ] as const;
 
 export function Nav() {
@@ -25,10 +26,10 @@ export function Nav() {
         <nav>
           <ul className="hidden items-center gap-8 text-sm text-ink-muted md:flex">
             {links.map((l) => (
-              <li key={l.href}>
-                <a href={l.href} className="transition-colors hover:text-ink">
+              <li key={l.to}>
+                <Link to={l.to} className="transition-colors hover:text-ink">
                   {t(`nav.links.${l.key}`)}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -36,12 +37,12 @@ export function Nav() {
         <div className="flex items-center gap-2">
           <LanguageSelect />
           <ThemeToggle />
-          <a
-            href="#download"
+          <Link
+            to="/#download"
             className="hidden rounded-lg bg-ink px-4 py-2 text-[13px] font-semibold text-bg transition-colors hover:bg-ink/90 sm:inline-flex"
           >
             {t("nav.download")}
-          </a>
+          </Link>
         </div>
       </div>
     </motion.header>

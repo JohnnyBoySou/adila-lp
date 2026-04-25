@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 type Size = "sm" | "md" | "lg";
 
 const sizeMap: Record<Size, string> = {
@@ -21,9 +23,9 @@ export function LogoMark({ size = "md", className = "" }: { size?: Size; classNa
 
 export function Logo() {
   return (
-    <a href="#" className="inline-flex items-center gap-2.5 text-ink font-semibold tracking-tight">
+    <Link to="/" className="inline-flex items-center gap-2.5 text-ink font-semibold tracking-tight">
       <LogoMark />
       <span className="text-[17px] font-display">adila</span>
-    </a>
+    </Link>
   );
 }
