@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { CaretDown, Globe } from "@phosphor-icons/react";
 import { supportedLngs, type Lng } from "../i18n.ts";
 
 export function LanguageSelect() {
@@ -45,24 +46,15 @@ export function LanguageSelect() {
         aria-label={t("nav.language")}
         className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-line bg-bg-card-2 px-3 font-mono text-[11px] font-medium text-ink-muted transition-colors hover:text-ink"
       >
-        <GlobeIcon />
+        <Globe size={13} weight="regular" />
         <span>{current.short}</span>
-        <motion.svg
-          width="10"
-          height="10"
-          viewBox="0 0 10 10"
+        <motion.span
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.2 }}
+          className="inline-grid"
         >
-          <path
-            d="M2 4l3 3 3-3"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </motion.svg>
+          <CaretDown size={10} weight="bold" />
+        </motion.span>
       </button>
 
       <AnimatePresence>
@@ -98,18 +90,5 @@ export function LanguageSelect() {
         )}
       </AnimatePresence>
     </div>
-  );
-}
-
-function GlobeIcon() {
-  return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5" />
-      <path
-        d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-    </svg>
   );
 }

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { CaretDown } from "@phosphor-icons/react";
 
 const RELEASES_URL = "https://raw.githubusercontent.com/JohnnyBoySou/adila-ide/master/RELEASES.md";
 
@@ -221,9 +222,6 @@ export function Releases() {
               transition={{ delay: i * 0.05, duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
               className="relative overflow-hidden rounded-2xl border border-line bg-bg-card"
             >
-              {r.current && (
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-[#5b8cff] to-[#9d6bff] opacity-70" />
-              )}
               <header className="flex flex-wrap items-baseline justify-between gap-3 border-b border-line-soft px-7 py-5">
                 <div className="flex items-baseline gap-3">
                   <h3 className="font-display text-[24px] font-medium leading-none tracking-tight">
@@ -329,15 +327,7 @@ function ReleaseBody({ blocks, expanded, onToggle, expandLabel, collapseLabel }:
             transition={{ duration: 0.2 }}
             className="inline-grid"
           >
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-              <path
-                d="M2 4l3 3 3-3"
-                stroke="currentColor"
-                strokeWidth="1.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <CaretDown size={10} weight="bold" />
           </motion.span>
         </button>
       </div>

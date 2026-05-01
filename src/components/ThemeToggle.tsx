@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { Moon, Sun } from "@phosphor-icons/react";
 import { useTheme } from "../theme.tsx";
 
 export function ThemeToggle() {
@@ -21,36 +22,13 @@ export function ThemeToggle() {
           transition={{ duration: 0.25, ease: "easeOut" }}
           className="inline-grid"
         >
-          {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+          {theme === "dark" ? (
+            <Sun size={16} weight="regular" />
+          ) : (
+            <Moon size={16} weight="regular" />
+          )}
         </motion.span>
       </AnimatePresence>
     </button>
-  );
-}
-
-function SunIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.6" />
-      <path
-        d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function MoonIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-      <path
-        d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }

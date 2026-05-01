@@ -18,7 +18,7 @@ export function Features() {
         </span>
         <h2 className="mt-3 font-display text-[clamp(30px,4vw,52px)] font-medium leading-tight tracking-tight">
           {t("features.title1")}
-          <br /> {t("features.title2")}
+          <br /> <span className="font-serif italic font-normal">{t("features.title2")}</span>
         </h2>
         <p className="mx-auto mt-5 max-w-lg text-[15px] leading-relaxed text-ink-muted">
           {t("features.subtitle")}
@@ -30,7 +30,8 @@ export function Features() {
         title={
           <>
             {t("features.row1.title1")}
-            <br /> {t("features.row1.title2")}
+            <br />{" "}
+            <span className="font-serif italic font-normal">{t("features.row1.title2")}</span>
           </>
         }
         text={t("features.row1.text")}
@@ -54,7 +55,8 @@ export function Features() {
         title={
           <>
             {t("features.row2.title1")}
-            <br /> {t("features.row2.title2")}
+            <br />{" "}
+            <span className="font-serif italic font-normal">{t("features.row2.title2")}</span>
           </>
         }
         text={t("features.row2.text")}

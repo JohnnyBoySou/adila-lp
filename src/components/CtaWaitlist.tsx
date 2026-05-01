@@ -20,7 +20,7 @@ export function CtaWaitlist() {
       >
         <h2 className="font-display text-[clamp(30px,4.5vw,52px)] font-medium leading-tight tracking-tight">
           {t("cta.title1")}
-          <br /> {t("cta.title2")}
+          <br /> <span className="font-serif italic font-normal">{t("cta.title2")}</span>
         </h2>
         <p className="mx-auto mt-4 max-w-md text-[15px] text-ink-muted">{t("cta.subtitle")}</p>
       </motion.div>
@@ -30,7 +30,7 @@ export function CtaWaitlist() {
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as const }}
-        className="relative mx-auto mt-10 max-w-2xl overflow-hidden rounded-3xl border border-line bg-bg-card p-10"
+        className="glass relative mx-auto mt-10 max-w-2xl overflow-hidden rounded-3xl p-10"
       >
         <motion.div
           aria-hidden

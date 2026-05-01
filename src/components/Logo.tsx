@@ -25,7 +25,9 @@ export function Logo() {
   return (
     <Link to="/" className="inline-flex items-center gap-2.5 text-ink font-semibold tracking-tight">
       <LogoMark />
-      <span className="text-[17px] font-display">adila</span>
+      <span className="text-[17px] font-display">
+        adila <span className="text-ink-muted font-normal">IDE</span>
+      </span>
     </Link>
   );
 }

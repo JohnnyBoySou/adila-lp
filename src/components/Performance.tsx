@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { useTranslation } from "react-i18next";
 
@@ -45,6 +46,22 @@ export function Performance() {
           />
         ))}
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.6 }}
+        className="mt-10 flex justify-center"
+      >
+        <Link
+          to="/benchmarks"
+          className="group inline-flex items-center gap-2 rounded-lg border border-line bg-bg-card px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-bg-card-2"
+        >
+          {t("performance.viewBenchmarks")}
+          <span className="text-ink-muted transition-transform group-hover:translate-x-0.5">→</span>
+        </Link>
+      </motion.div>
     </section>
   );
 }
@@ -84,7 +101,7 @@ function StatCard({ label, value, unit, note, decimals, index }: StatProps) {
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ delay: index * 0.08, duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
-      className="rounded-2xl border border-line bg-bg-card p-6"
+      className="glass-soft rounded-2xl p-6"
     >
       <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-dim">
         {label}

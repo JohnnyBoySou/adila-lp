@@ -98,7 +98,8 @@
       "1": { "label": "Latência de teclado", "note": "p99, 120Hz" },
       "2": { "label": "RAM em idle", "note": "vs. ~600MB do Electron" },
       "3": { "label": "Binário", "note": "single-file, sem runtime" }
-    }
+    },
+    "viewBenchmarks": "Ver benchmarks completos"
   },
   "releases": {
     "kicker": "Histórico",
@@ -257,6 +258,36 @@
       "label": "Resumo",
       "full": "Texto completo no repositório:",
       "body": "Copyright (c) 2026 Adila contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT."
+    },
+    "benchmarks": {
+      "kicker": "Benchmarks",
+      "title": "Medido. Re-medido. Publicado.",
+      "subtitle": "Resultados completos das suítes de benchmark da Adila — backend em Go e frontend em Bun. Atualizado a cada release.",
+      "tabs": {
+        "backend": "Backend (Go)",
+        "frontend": "Frontend (Bun)"
+      },
+      "runDate": "Última execução",
+      "meta": {
+        "hardware": "Hardware",
+        "runtime": "Runtime",
+        "benchtime": "Benchtime",
+        "noise": "Ruído",
+        "suites": "Suítes"
+      },
+      "cols": {
+        "benchmark": "Benchmark",
+        "iters": "Iterações",
+        "nsOp": "ns/op",
+        "bOp": "B/op",
+        "allocs": "allocs/op",
+        "delta": "Δ vs. anterior",
+        "hz": "ops/s",
+        "mean": "Média",
+        "rme": "Erro"
+      },
+      "tests": "testes",
+      "footnote": "Verde indica melhoria em relação à execução anterior. Vermelho indica regressão. Diferenças menores que 3% são consideradas ruído."
     },
     "contact": {
       "kicker": "Contato",

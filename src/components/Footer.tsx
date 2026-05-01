@@ -13,7 +13,7 @@ const product: Item[] = [
 
 const resources: Item[] = [
   { label: "docs", to: "/docs" },
-  { label: "cli", to: "/cli" },
+  { label: "cli", to: "/docs/cli" },
   { label: "github", to: "https://github.com/JohnnyBoySou/adila-ide", external: true },
   { label: "discord", to: "https://discord.gg/adila", external: true },
 ];
@@ -28,7 +28,7 @@ const company: Item[] = [
 export function Footer() {
   const { t } = useTranslation();
   return (
-    <footer className="border-t border-line-soft py-14">
+    <footer className="border-t border-line-soft pb-32 pt-14">
       <div className="container-x grid gap-8 md:grid-cols-[2fr_1fr_1fr_1fr]">
         <div>
           <Logo />

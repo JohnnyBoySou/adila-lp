@@ -24,7 +24,7 @@ export function PowerFeatures() {
         </span>
         <h2 className="mt-3 font-display text-[clamp(28px,4vw,48px)] font-medium leading-tight tracking-tight">
           {t("powerFeatures.title1")}
-          <br /> {t("powerFeatures.title2")}
+          <br /> <span className="font-serif italic font-normal">{t("powerFeatures.title2")}</span>
         </h2>
         <p className="mx-auto mt-4 max-w-md text-[15px] text-ink-muted">
           {t("powerFeatures.subtitle")}

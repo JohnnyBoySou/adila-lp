@@ -98,7 +98,8 @@
       "1": { "label": "Key latency", "note": "p99, 120Hz" },
       "2": { "label": "Idle RAM", "note": "vs. ~600MB on Electron" },
       "3": { "label": "Binary", "note": "single-file, no runtime" }
-    }
+    },
+    "viewBenchmarks": "View full benchmarks"
   },
   "releases": {
     "kicker": "History",
@@ -257,6 +258,36 @@
       "label": "Summary",
       "full": "Full text in the repo:",
       "body": "Copyright (c) 2026 Adila contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT."
+    },
+    "benchmarks": {
+      "kicker": "Benchmarks",
+      "title": "Measured. Re-measured. Published.",
+      "subtitle": "Full results from Adila's benchmark suites — Go on the backend, Bun on the frontend. Updated on every release.",
+      "tabs": {
+        "backend": "Backend (Go)",
+        "frontend": "Frontend (Bun)"
+      },
+      "runDate": "Last run",
+      "meta": {
+        "hardware": "Hardware",
+        "runtime": "Runtime",
+        "benchtime": "Benchtime",
+        "noise": "Noise",
+        "suites": "Suites"
+      },
+      "cols": {
+        "benchmark": "Benchmark",
+        "iters": "Iterations",
+        "nsOp": "ns/op",
+        "bOp": "B/op",
+        "allocs": "allocs/op",
+        "delta": "Δ vs. previous",
+        "hz": "ops/s",
+        "mean": "Mean",
+        "rme": "Error"
+      },
+      "tests": "tests",
+      "footnote": "Green indicates an improvement over the previous run. Red indicates a regression. Differences smaller than 3% are treated as noise."
     },
     "contact": {
       "kicker": "Contact",

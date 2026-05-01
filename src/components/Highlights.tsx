@@ -20,11 +20,8 @@ export function Highlights() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: i * 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
             whileHover={{ y: -4 }}
-            className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-bg-card p-7"
+            className="glass-soft group relative flex flex-col overflow-hidden rounded-2xl p-7"
           >
-            <div
-              className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r ${it.accent} opacity-60`}
-            />
             <span className="font-mono text-[10px] tracking-[0.2em] text-ink-dim">
               {t(`highlights.${it.idx}.kicker`)}
             </span>

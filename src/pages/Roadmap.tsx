@@ -3,9 +3,9 @@ import { useTranslation } from "react-i18next";
 import { PageShell } from "../components/PageShell.tsx";
 
 const columns = [
-  { key: "now", count: 4, accent: "from-[#5b8cff] to-[#9d6bff]" },
-  { key: "next", count: 4, accent: "from-[#22d3ee] to-[#5b8cff]" },
-  { key: "later", count: 4, accent: "from-[#f472b6] to-[#fb923c]" },
+  { key: "now", count: 4 },
+  { key: "next", count: 4 },
+  { key: "later", count: 4 },
 ] as const;
 
 export function Roadmap() {
@@ -26,9 +26,6 @@ export function Roadmap() {
             transition={{ delay: i * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
             className="relative overflow-hidden rounded-2xl border border-line bg-bg-card p-7"
           >
-            <div
-              className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r ${c.accent} opacity-70`}
-            />
             <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-dim">
               {t(`pages.roadmap.columns.${c.key}.label`)}
             </span>

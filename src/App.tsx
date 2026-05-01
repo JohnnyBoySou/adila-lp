@@ -5,11 +5,15 @@ import { ScrollToHash } from "./components/ScrollToHash.tsx";
 import { Home } from "./pages/Home.tsx";
 import { Roadmap } from "./pages/Roadmap.tsx";
 import { Docs } from "./pages/Docs.tsx";
-import { Cli } from "./pages/Cli.tsx";
+import { DocsCli } from "./pages/DocsCli.tsx";
 import { About } from "./pages/About.tsx";
 import { Privacy } from "./pages/Privacy.tsx";
 import { License } from "./pages/License.tsx";
 import { Contact } from "./pages/Contact.tsx";
+import { Benchmarks } from "./pages/Benchmarks.tsx";
+import { DocsSettings } from "./pages/DocsSettings.tsx";
+import { DocsThemes } from "./pages/DocsThemes.tsx";
+import { DocsShortcuts } from "./pages/DocsShortcuts.tsx";
 
 export default function App() {
   return (
@@ -22,11 +26,15 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/docs" element={<Docs />} />
-            <Route path="/cli" element={<Cli />} />
+            <Route path="/docs/settings" element={<DocsSettings />} />
+            <Route path="/docs/themes" element={<DocsThemes />} />
+            <Route path="/docs/shortcuts" element={<DocsShortcuts />} />
+            <Route path="/docs/cli" element={<DocsCli />} />
             <Route path="/sobre" element={<About />} />
             <Route path="/privacidade" element={<Privacy />} />
             <Route path="/licenca" element={<License />} />
             <Route path="/contato" element={<Contact />} />
+            <Route path="/benchmarks" element={<Benchmarks />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </main>
